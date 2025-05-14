@@ -1,0 +1,542 @@
+/* Global Styles */
+:root {
+    --primary-color: #1a237e;  /* Deep Blue */
+    --secondary-color: #2196f3; /* Bright Blue */
+    --accent-color: #64b5f6;    /* Light Blue */
+    --dark-blue: #0d47a1;      /* Dark Blue */
+    --light-blue: #bbdefb;     /* Very Light Blue */
+    --text-light: #ffffff;     /* White Text */
+    --text-dark: #1a237e;      /* Dark Blue Text */
+    --text-gray: #333333;      /* Dark Gray Text */
+    --overlay-color: rgba(26, 35, 126, 0.85); /* Semi-transparent Deep Blue */
+    --card-bg: rgba(255, 255, 255, 0.15);
+    --text-muted: rgba(255, 255, 255, 0.85);
+    --text-muted-dark: rgba(26, 35, 126, 0.7); /* Muted Dark Text */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-light);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 4.5s forwards;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('abcd.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    filter: brightness(0.8) saturate(1.2);
+}
+
+/* Section Background Overlays */
+.hero-section, .about-section, .services-section, #projects, #contact {
+    position: relative;
+    background: var(--overlay-color);
+    border-radius: 10px;
+    margin: 20px 0;
+    backdrop-filter: blur(8px);
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(26, 35, 126, 0.95) !important;
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    top: 36px;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--text-light) !important;
+}
+
+.nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+/* DateTime Bar */
+.datetime-bar {
+    background-color: rgba(13, 71, 161, 0.95);
+    color: var(--text-light);
+    padding: 8px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1030;
+    font-size: 0.9rem;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    padding-top: 112px;
+    position: relative;
+}
+
+.greeting-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.greeting {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Services Section */
+.service-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-color);
+}
+
+.service-card i {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: var(--text-muted);
+}
+
+/* Projects Section */
+.card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--accent-color);
+}
+
+.card-body {
+    color: var(--text-light);
+}
+
+.card-title {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.card-text {
+    color: var(--text-muted);
+}
+
+/* Contact Section */
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent-color);
+    color: var(--text-light);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-info {
+    color: var(--text-light);
+}
+
+.contact-info i {
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background: rgba(26, 35, 126, 0.95) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* About Section Styles */
+.about-content {
+    color: var(--text-light);
+}
+
+.section-title {
+    color: var(--text-light);
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section-divider {
+    background-color: var(--accent-color);
+    width: 60px;
+    height: 3px;
+    margin: 1rem 0 2rem 0;
+}
+
+.about-text {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.key-point {
+    color: var(--text-light);
+}
+
+.key-point i {
+    color: var(--accent-color);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--text-light);
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 0.8rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section, .service-card, .card {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: auto;
+        padding: 100px 0 50px;
+    }
+    
+    .service-card {
+        margin-bottom: 1rem;
+    }
+
+    .about-content {
+        padding: 1rem 0;
+    }
+
+    .about-image-container {
+        margin-bottom: 2rem;
+    }
+
+    .greeting {
+        font-size: 1rem;
+        padding-left: 35px;
+    }
+
+    .greeting::before {
+        width: 25px;
+    }
+
+    .datetime-item.nepali {
+        justify-content: flex-start;
+        margin-top: 5px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Animated Intro Overlay */
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 0.5s ease-out 4s forwards;
+}
+
+.intro-content {
+    text-align: center;
+    color: white;
+}
+
+.animated-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.text-line {
+    font-size: 2.5rem;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(20px);
+    display: block;
+}
+
+.text-line:nth-child(1) {
+    animation: slideUp 0.5s ease-out 0.5s forwards;
+}
+
+.text-line:nth-child(2) {
+    font-size: 3.5rem;
+    animation: slideUp 0.5s ease-out 1.5s forwards;
+}
+
+.text-line:nth-child(3) {
+    animation: slideUp 0.5s ease-out 2.5s forwards;
+}
+
+.text-line.highlight {
+    color: #ffd700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.datetime-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.datetime-item i {
+    color: var(--accent-color);
+}
+
+.datetime-item.nepali {
+    justify-content: flex-end;
+}
+
+/* Profile Image */
+.profile-image {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--accent-color);
+}
+
+/* Content Areas with Light Background */
+.bg-light, 
+.white-section {
+    color: var(--text-dark);
+}
+
+.bg-light h1,
+.bg-light h2,
+.bg-light h3,
+.bg-light h4,
+.bg-light h5,
+.bg-light h6,
+.white-section h1,
+.white-section h2,
+.white-section h3,
+.white-section h4,
+.white-section h5,
+.white-section h6 {
+    color: var(--text-dark);
+}
+
+.bg-light p,
+.white-section p {
+    color: var(--text-gray);
+}
+
+/* Cards with Light Background */
+.card.bg-white,
+.service-card.bg-white {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: var(--text-gray);
+}
+
+.card.bg-white .card-title,
+.service-card.bg-white h3 {
+    color: var(--text-dark);
+}
+
+.card.bg-white .card-text,
+.service-card.bg-white p {
+    color: var(--text-gray);
+}
+
+/* Form Elements on Light Background */
+.bg-light .form-control,
+.white-section .form-control {
+    color: var(--text-gray);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bg-light .form-control::placeholder,
+.white-section .form-control::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Links in Light Background */
+.bg-light a:not(.btn),
+.white-section a:not(.btn) {
+    color: var(--secondary-color);
+}
+
+.bg-light a:not(.btn):hover,
+.white-section a:not(.btn):hover {
+    color: var(--dark-blue);
+}
+
+/* Maintain existing dark background styles */
+.hero-section, 
+.about-section, 
+.services-section:not(.bg-light), 
+#projects:not(.bg-light), 
+#contact:not(.bg-light) {
+    color: var(--text-light);
+}
+
+/* Text in cards on dark backgrounds */
+.card:not(.bg-white) {
+    color: var(--text-light);
+}
+
+.card:not(.bg-white) .card-title {
+    color: var(--text-light);
+}
+
+.card:not(.bg-white) .card-text {
+    color: var(--text-muted);
+}
+
+/* Service cards on dark backgrounds */
+.service-card:not(.bg-white) {
+    color: var(--text-light);
+}
+
+.service-card:not(.bg-white) h3 {
+    color: var(--text-light);
+}
+
+.service-card:not(.bg-white) p {
+    color: var(--text-muted);
+}
+
+/* About section text adjustments */
+.about-section.bg-light .about-text {
+    color: var(--text-gray);
+}
+
+.about-section.bg-light .key-point {
+    color: var(--text-dark);
+}
+
+.about-section:not(.bg-light) .about-text {
+    color: var(--text-muted);
+}
+
+/* Contact form on light background */
+.contact-section.bg-light .contact-info {
+    color: var(--text-dark);
+}
+
+.contact-section.bg-light .contact-form input,
+.contact-section.bg-light .contact-form textarea {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-gray);
+}
+
+.contact-section.bg-light .contact-form input::placeholder,
+.contact-section.bg-light .contact-form textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Maintain dark background styles for navbar and footer */
+.navbar,
+footer {
+    color: var(--text-light);
+} 
